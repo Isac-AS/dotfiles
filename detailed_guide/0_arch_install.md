@@ -236,3 +236,12 @@ exit
 umount -R /mnt
 reboot
 ```
+
+Once booted and logged in I recommend looking around and doing minor changes such as creating `ll` alias in the `~/.bashrc` file. Just add the following line:
+```bash
+alias ll='ls -alF'
+```
+Then run:
+```bash
+source ~/.bashrc
+```
