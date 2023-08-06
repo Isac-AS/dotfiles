@@ -68,16 +68,16 @@ cd ~/.config/dmenu && sudo make install
 ## Installing a display manager
 A [display manager](https://wiki.archlinux.org/title/Display_manager), or login manager, is typically a graphical user interface that is displayed at the end of the boot process. [LightDM](https://wiki.archlinux.org/title/LightDM) will be installed:
 ```bash
-pacman -S lightdm
+sudo pacman -S lightdm
 ```
 Additionally `lightdm-gtk-greeter` has to be installed. This is the **default** greeter LightDM attepts to use.
 ```bash
-pacman -S lightdm-gtk-greeter
-pacman -S lightdm-gtk-greeter-settings
+sudo pacman -S lightdm-gtk-greeter
+sudo pacman -S lightdm-gtk-greeter-settings
 ```
 Finally, the service must be enabled:
 ```bash
-sydo systemctl enable lightdm
+sudo systemctl enable lightdm
 ```
 
 ## Adding an entry for DWM in the DM

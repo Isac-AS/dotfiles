@@ -31,13 +31,13 @@ To determine if packages are authentic, pacman uses GnuPG keys in a web of trust
 #### Initializing the keyring
 To initialize the *pacman* keyring run:
 ```bash
-pacman-key --init
+sudo pacman-key --init
 ```
 Then, the initial setup of keys is achieved using:
 ```bash
-pacman-key --populate
+sudo pacman-key --populate
 # or
-pacman-key --populate archlinux
+sudo pacman-key --populate archlinux
 ```
 This should avoid *invalid signature or related* errors when downloading packages.
 
@@ -54,7 +54,7 @@ sudo systemctl enable archlinux-keyring-wkd-sync.timer
 ### Synchronize system packages
 Simply run:
 ```bash
-pacman -Sy
+sudo pacman -Sy
 ```
 
 ### Update the system clock
@@ -72,7 +72,7 @@ systemctl status systemd-timesyncd.service
 ```
 A possible workaround is [installing](https://wiki.archlinux.org/title/Chrony) [Chrony](https://chrony-project.org/). And activate the service.
 ```bash
-pacman -S chrony
+sudo pacman -S chrony
 systemctl start chronyd.service
 ```
 Weirdly enough timesyncd did not work in another desktop despite ntpdate having success when quering the same servers and making sure no other service was holding port 123.
@@ -146,7 +146,7 @@ arch-chroot /mnt
 #### Install an editor
 Install an editor of your choice:
 ```bash
-pacman -S vim neovim
+sudo pacman -S vim neovim
 ```
 
 #### Enable parallel downloads
@@ -186,7 +186,7 @@ KEYMAP=es
 ### Network manager
 In order to have networking configured on the first boot automatically, I opted on using the NetworkManager service. Install it with:
 ```bash
-pacman -S networkmanager
+sudo pacman -S networkmanager
 ```
 Then enable it so it runs on startup.
 ```bash
@@ -196,7 +196,7 @@ systemctl enable NetworkManager
 ### Bootloader installation
 In this case, [GRUB](https://wiki.archlinux.org/title/GRUB) will be installed. Thus GRUB itself will be installed alongside [efibootmgr](https://wiki.archlinux.org/title/EFISTUB) and [os-prober](https://linux.afnom.net/post-install/os-prober.html). `os-prober` is used to detect other operating systems on the device. It will be used alongside `grub-mkconfig` to detect any operating systems that haven't been automatically picked up.
 ```bash
-pacman -S grub efibootmgr os-prober
+sudo pacman -S grub efibootmgr os-prober
 ```
 Run the following commands:
 ```bash
@@ -220,7 +220,7 @@ usermod -aG wheel,video,audio,storage username
 ```
 In order to have root privileges sudo is requiered.
 ```bash
-pacman -S sudo
+sudo pacman -S sudo
 ```
 Edit /etc/sudoers and uncomment the following line:
 ```bash
