@@ -1,5 +1,5 @@
 # Quick links
-- [Clean Arch install (Full explanation)](./detailed_guide/README.md). 
+- [Clean Arch install (Full explanation)](./detailed_guide/). 
 - [DWM](https://github.com/Isac-AS/dwm)
 
 # Overview
