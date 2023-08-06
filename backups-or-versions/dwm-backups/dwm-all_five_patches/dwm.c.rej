@@ -1,0 +1,15 @@
+--- dwm.c
++++ dwm.c
+@@ -1222,6 +1340,12 @@ maprequest(XEvent *e)
+ 	static XWindowAttributes wa;
+ 	XMapRequestEvent *ev = &e->xmaprequest;
+ 
++	Client *i;
++	if (showsystray && (i = wintosystrayicon(ev->window))) {
++		sendevent(i->win, netatom[Xembed], StructureNotifyMask, CurrentTime, XEMBED_WINDOW_ACTIVATE, 0, systray->win, XEMBED_EMBEDDED_VERSION);
++		updatesystray(1);
++	}
++
+ 	if (!XGetWindowAttributes(dpy, ev->window, &wa))
+ 		return;
+ 	if (wa.override_redirect)
