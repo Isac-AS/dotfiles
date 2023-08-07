@@ -20,3 +20,15 @@ fading=false;
 #fading=true;
 ```
 I simply prefer things to pop up.
+
+## GTK dark theme
+Add the following line to ```/usr/share/gtk-3.0/settings.ini```
+```bash
+gtk-application-prefer-dark-theme = true
+```
+
+## Opening things
+This makes a reference to applications trying to open stuff through xdg-open. For example, clicking a link in alacritty.
+```bash
+pacman -S xdg-utils
+```

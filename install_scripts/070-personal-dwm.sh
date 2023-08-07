@@ -1,5 +1,8 @@
 #!/bin/sh
 
+sudo pacman -S base-devel
+sudo pacman -S picom
+
 git clone https://github.com/Isac-AS/dwm ~/.config/dwm
 git clone https://github.com/Isac-AS/st ~/.config/st
 git clone https://github.com/Isac-AS/dmenu ~/.config/dmenu
