@@ -7,6 +7,11 @@ There are many choices in life. [chad](https://nvchad.com/):
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 ```
 
+xclip rocks
+```
+sudo pacman -S xclip
+```
+
 ### Installing dependencies
 It requires nerd-fonts and ripgrep
 ```bash

@@ -26,6 +26,7 @@ Configuration files can be found under the `/etc/X11` directory. Here the direct
 ### DMPS
 [DPMS](https://wiki.archlinux.org/title/Display_Power_Management_Signaling) (Display Power Management Signaling) enables power saving behaviour of monitors when the computer is not in use. I personally do not want monitors to turn off. DPMS and screensaver settings can be modified using the `xset` command. To disable screen saver blanking run.
 ```bash
+xset s 0 0 &
 xset s off
 ```
 To turn off DPMS:
