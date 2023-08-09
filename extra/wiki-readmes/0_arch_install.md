@@ -4,16 +4,30 @@ This section will cover the instalation of Arch Linux and will end after success
 Most of the steps are taken from the [Arch Wiki](https://wiki.archlinux.org/title/Installation_guide) and [Antonio's dotfiles](https://github.com/antoniosarosi/dotfiles).
 
 ## Automatic installation
-It should be noted that te installation can be done by running the "archinstall" script. Recommended, just run:
+It should be noted that the installation can be done by running the "archinstall" script. Recommended, just run:
 ```bash
 archinstall
 ```
 **[From now on it is assumed that a manual installation is about to be performed. It is also assumed that the iso has been downloaded and the installation medium prepared.]**
 
 ## Pre-installation
-This section contains some convenient commands to run after booting the live environment.
+### Before booting the life environment
+Make sure the iso file was flashed properly, selecting the UEFI setting. When booting the USB make sure it prompts:
+```
+Arch Linux install medium (x86_64, UEFI)
+```
+If instead the following shows up:
+```
+Arch Linux install medium (x86_64, BIOS)
+```
+The installation of the boot manager won't be successfull and an error similar to "EFI variables not available in this system" will appear.
+To fix this, "re-flash" the USB. Using [Rufus](https://rufus.ie/en/), select `Partition scheme: GPT` and `Target system: UEFI(non CSM)`.
+
+To boot the USB make sure to disable the [CSM](https://en.wikipedia.org/wiki/UEFI#CSM_booting) (Compatibility Support Module). This is a component of the UEFI firmware that provides legacy BIOS compatibility by emulating a BIOS environment.
+
 ### Basic interaction
-Basic interaction meaning changing the keyboard layout and font.
+After selecting that option you are prompted in the life environment. In might be interesting to change the keyboard layout and font.
+
 
 This is an example on how to change the keyboard layout to spanish.
 ```bash
@@ -75,7 +89,7 @@ A possible workaround is [installing](https://wiki.archlinux.org/title/Chrony) [
 sudo pacman -S chrony
 systemctl start chronyd.service
 ```
-Weirdly enough timesyncd did not work in another desktop despite ntpdate having success when quering the same servers and making sure no other service was holding port 123.
+Weirdly enough timesyncd did not work in another desktop despite ntpdate having success when quering the same servers and making sure no other service was holding port 123. Chrony works for me.
 
 ### Partitioning
 #### Identifyng the disk
@@ -87,10 +101,16 @@ lsblk
 ```
 
 #### Partition creation
-Create partitions with the `fdisk` utility. Example layout: boot_partition (boot > 300 MiB && boot < 1 GiB), swap ( swap > 512 MiB), root_partition (remainder of the space). Just press `n` a couple times.
+Create partitions with the `fdisk` utility. Press `d` to delete partitions (if there was something on the disk. Press `n` to create a new partition. Use `fdisk` to modify the partition tables.
 ```bash
 fdisk /dev/the_disk_to_be_partitioned
 ```
+Example layout:
+| Mount point | Partition                   | Partition type | Suggested size |
+| ----------- | --------------------------- | -------------- | -------------- |
+| `/mnt/boot` | `/dev/efi_system_partition` | [EFI system partition](https://wiki.archlinux.org/title/EFI_system_partition) | At least 300 MiB. If multiple kernels will be installed, then no less than 1 GiB. Give it 500 MiB just in case |
+| `[SWAP]` | `/dev/swap_partition` | Linux swap | More than 512 MiB |
+| `/mnt` | /dev/root_partition | Linux x86_64 root (/) | Remainder of the device | 
 
 #### Partition formatting
 Root partition:
@@ -207,6 +227,24 @@ os-prober
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
+If `os-prober` does not detect anything, go to `/etc/default/grub` and uncomment:
+```
+# Probing for other operating systems is disabled for security reasons. Read
+# documentation on GRUB_DISABLE_OS_PROBER, if still want to enable this
+# functionality install os-prober and uncomment to detect and include other
+# operating systems.
+GRUB_DISABLE_OS_PROBER="false"
+```
+This will make `grub-mkconfig -o /boot/grub/grub.cfg` to run `os-prober`.
+
+If you are looking for a Windows partition entry, and `os-prober` is unable to mount the ntfs partition, install `ntfs-3g`.
+```bash
+pacman -S ntfs-3g
+```
+This will allow mounting `ntfs` devices without having to specify `mount -t ntfs [device] [dir]`.
+
+If the problem persists, boot into Windows, press `Win+R`, type `msinfo32.exe` and check the value of **BIOS mode**. If the value is `Legacy` (which happened to me), reinstall Windows making sure an EFI installation will be made. If Windows is booted in Legacy BIOS mode it will not be picked up by os-prober.
+
 ### User creation
 Giving root user a password:
 ```bash
@@ -245,3 +283,4 @@ Then run:
 ```bash
 source ~/.bashrc
 ```
+

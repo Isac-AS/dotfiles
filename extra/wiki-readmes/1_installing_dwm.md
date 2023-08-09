@@ -1,5 +1,5 @@
 # Installing dwm
-This section picks up after booting into the system.
+This page picks up after booting into the system.
 
 Quick reminder update with:
 ```bash
@@ -15,13 +15,13 @@ However, some packages from the [xorg-apps](https://archlinux.org/groups/x86_64/
 ```bash
 sudo pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
 ```
-It should be noted that an [xorg](https://archlinux.org/groups/x86_64/xorg/) group is also available, which includes Xorg server packages, packages from the [xorg-apps](https://archlinux.org/groups/x86_64/xorg-apps/) group and fonts. Simply run:
+It should be noted that the [xorg](https://archlinux.org/groups/x86_64/xorg/) package group is also available, which includes Xorg server packages, packages from the [xorg-apps](https://archlinux.org/groups/x86_64/xorg-apps/) group and fonts. Simply run:
 ```bash
 sudo pacman -S xorg
 ```
 
 ### Config files
-Configuration files can be found under the `/etc/X11` directory. Here the directories `/etc/X11/xinit` and `/etc/X11/xorg.conf.d` are found. You can add your own configuration files, ending in `.conf` under the `/etc/X11/xorg.conf.d`. This will be used to configure the monitor setup or change mouse or keyboard behaviour.
+Configuration files can be found under the `/etc/X11` directory. Here the directories `/etc/X11/xinit` and `/etc/X11/xorg.conf.d` are found. You can add your own configuration files, ending in `.conf` under `/etc/X11/xorg.conf.d`. This will be used to configure the monitor setup or change mouse or keyboard behaviour.
 
 ### DMPS
 [DPMS](https://wiki.archlinux.org/title/Display_Power_Management_Signaling) (Display Power Management Signaling) enables power saving behaviour of monitors when the computer is not in use. I personally do not want monitors to turn off. DPMS and screensaver settings can be modified using the `xset` command. To disable screen saver blanking run.
@@ -46,7 +46,7 @@ Why not?
 sudo pacman -S firefox
 ```
 ### Create a config directory
-If `neofetch` or `htop` the directory `~/.config` might already exist. This directory is used to save user-specific application configuration. If it does not exist, run:
+If `neofetch` or `htop` were installed, the directory `~/.config` might already exist. This directory is used to save user-specific application configuration. If it does not exist, run:
 ```bash
 mkdir ~/.config
 ```
@@ -102,3 +102,4 @@ Type=XSession
 ```
 
 Now, after rebooting and logging in, you should be into DWM.
+
