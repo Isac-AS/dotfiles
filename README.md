@@ -4,7 +4,7 @@
 ![dmenu](./extra/images/Screenshots/dmenu.png)
 
 # Check out the Wiki
-This repository has a [Wiki](https://github.com/Isac-AS/dotfiles/wiki) that compiles the steps done on a clean Arch Linux install to get the desktop shown as well as some problems issues found and their respective solutions.
+This repository has a [Wiki](https://github.com/Isac-AS/dotfiles/wiki) that compiles the steps done on a clean Arch Linux install to get the desktop shown as well as some  issues found and their respective solutions.
 The Wiki has the following sections:
 - [0 ‐ Arch installation process](https://github.com/Isac-AS/dotfiles/wiki/0-%E2%80%90-Arch-installation-process)
 - [1 - Installing dwm](https://github.com/Isac-AS/dotfiles/wiki/1-%E2%80%90-Installing-dwm)
@@ -15,7 +15,8 @@ The Wiki has the following sections:
 - [6 - Fixing UEFI](https://github.com/Isac-AS/dotfiles/wiki/6-%E2%80%90-Fixing-UEFI)
 - [7 - Dotfile management](https://github.com/Isac-AS/dotfiles/wiki/7-%E2%80%90-Dotfile-management)
 
-# Dotfiles under `~/.config/`
+# Dotfile management
+## Dotfiles under `~/.config/`
 As seen in the repo, the actual `alacritty.yml` file is under `dotfiles/alacritty/.config/alacritty/`.
 
 After running:
@@ -31,7 +32,7 @@ lrwxrwxrwx  1 isac isac   45 MONTH  DAY HH:MM  alacritty -> ../repos/dotfiles/al
 2. Now we have to imagine that this first directory is the `target` directory, in most cases, `$HOME`.
 3. Finally, the concrete config file `alacritty.yml` must be placed on a relative path from the target, `$HOME/` + `.config/alacritty/alacritty.yml`.
 
-# Dotfiles directly on the home directory
+## Dotfiles directly on the home directory
 For files like `.xprofile`, `.bashrc`, `.fehbg` or `.xbindkeysrc`, that are directly on the home directory are easier to stow. Simply put them under a directory, the name does not matter. 
 In this case, as there are a lot of files that start with 'x', I decided to name it `dotfiles/X`.
 These files can be directly "stowed" running:
