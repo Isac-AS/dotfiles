@@ -6,4 +6,3 @@ xset --dpms
 xset s off
 xset -b
 xbindkeys
-
