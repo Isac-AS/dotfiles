@@ -33,7 +33,7 @@ lrwxrwxrwx  1 isac isac   45 MONTH  DAY HH:MM  alacritty -> ../repos/dotfiles/st
 
 ### Dotfiles directly on the home directory
 For files like `.xprofile`, `.bashrc`, `.fehbg` or `.xbindkeysrc`, that are directly on the home directory are easier to stow. Simply put them under a directory, the name does not matter. 
-In this case, as there are a lot of files that start with 'x', I decided to name it `dotfiles/X`.
+In this example, as there are a lot of files that start with 'x', lets imagine `dotfiles/X`.
 These files can be directly "stowed" running:
 ```bash
 stow --target=$HOME X
