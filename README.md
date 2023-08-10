@@ -14,7 +14,7 @@ The Wiki has the following sections:
 - [7 - Dotfile management](https://github.com/Isac-AS/dotfiles/wiki/7-%E2%80%90-Dotfile-management)
 
 # Dotfile management
-## Attempt on explanaining stow
+## Attempt at explanaining stow
 ### Dotfiles under `~/.config/`
 As seen in the repo, the actual `alacritty.yml` file is under `dotfiles/stow_home/alacritty/.config/alacritty/`.
 
