@@ -1,6 +1,8 @@
 # Dotfiles
 ![dmenu](./extra/images/Screenshots/dmenu.png)
 
+![alacritty](./extra/images/Screenshots/alacritty.png)
+
 # Check out the Wiki
 This repository has a [Wiki](https://github.com/Isac-AS/dotfiles/wiki) that compiles the steps done on a clean Arch Linux install to get the desktop shown as well as some  issues found and their respective solutions.
 The Wiki has the following sections:
