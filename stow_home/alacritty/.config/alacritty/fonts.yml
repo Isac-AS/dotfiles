@@ -1,0 +1,22 @@
+font:
+  normal:
+    family: hack 
+    style: Regular
+
+  bold:
+    family: hack 
+    style: Bold
+
+  italic:
+    family: hack 
+    style: Italic
+
+  bold_italic:
+    family: hack 
+    style: Bold Italic
+      
+  size: 13.0
+
+  offset:
+    x: 0
+    y: 1
