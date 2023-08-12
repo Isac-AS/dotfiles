@@ -1,0 +1,6 @@
+[Unit]
+Description=Check for updates
+
+[Service]
+Type=oneshot
+ExecStart=/home/isac/check_updates.sh
