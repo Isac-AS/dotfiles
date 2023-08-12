@@ -17,3 +17,6 @@ alias grep='grep --color=auto'
 alias ll='ls -alF'
 eval "$(starship init zsh)"
 bindkey '^R' history-incremental-search-backward
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

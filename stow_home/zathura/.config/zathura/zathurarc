@@ -1,0 +1,6 @@
+map i recolor
+set default-fg "#222222"
+set default-bg "#999999"
+set recolor-darkcolor "#222222"
+set recolor-lightcolor "#999999"
+set recolor true
