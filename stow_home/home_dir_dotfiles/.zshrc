@@ -4,7 +4,13 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt beep nomatch
 unsetopt autocd extendedglob notify
-bindkey -v
+bindkey '^ ' autosuggest-accept
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+bindkey '^[[3~' delete-char
+bindkey '^[[3;5~' delete-word
+bindkey '^H' backward-delete-word
+#bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/isac/.zshrc'
