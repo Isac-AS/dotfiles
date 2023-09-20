@@ -10,6 +10,8 @@ bindkey '^[[1;5C' forward-word
 bindkey '^[[3~' delete-char
 bindkey '^[[3;5~' delete-word
 bindkey '^H' backward-delete-word
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
 #bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
