@@ -1,0 +1,12 @@
+import = ["/home/isac/.config/alacritty/fonts.toml", "/home/isac/.config/alacritty/colors.toml"]
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+opacity = 0.9
+
+[window.padding]
+x = 5
+y = 5
