@@ -5,7 +5,7 @@
 
 ! Xorg issue nov 2021 - use and change if needed
 ! Xft.dpi:   96
-Xft.dpi:   96
+Xft.dpi:  124 
 
 ! general settings
 URxvt.saveLines:        50000
