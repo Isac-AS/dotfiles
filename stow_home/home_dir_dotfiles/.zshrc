@@ -1,9 +1,12 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 setopt beep nomatch
 unsetopt autocd extendedglob notify
+# Vim mode
+bindkey -v
+
+#Some bindkeys
 bindkey '^ ' autosuggest-accept
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
@@ -12,14 +15,18 @@ bindkey '^[[3;5~' delete-word
 bindkey '^H' backward-delete-word
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
-#bindkey -v
-# End of lines configured by zsh-newuser-install
+
+bindkey ^P autosuggest-accept
+bindkey ^R history-incremental-search-backward 
+bindkey ^S history-incremental-search-forward
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/isac/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+#
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ll='ls -alF'
