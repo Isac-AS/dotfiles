@@ -1,0 +1,11 @@
+# theme = "tokyonight"
+# theme = "dark_plus"
+theme = "modus_vivendi_tinted"
+# theme = "onedark"
+# theme = "solarized_dark"
+
+[editor]
+line-number = "relative"
+
+[editor.lsp]
+display-inlay-hints = true

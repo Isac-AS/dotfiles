@@ -1,0 +1,13 @@
+[[language]]
+name = "rust"
+scope = "source.rust"
+injection-regex = "rust"
+file-types = ["rs"]
+roots = ["Cargo.toml", "Cargo.lock"]
+formatter = { command = "rustfmt" }
+language-servers = ["rust-analyzer"]
+auto-format = true
+
+[language-server.rust-analyzer.config]
+cargo = { features = "all" }
+check.command = "clippy"
