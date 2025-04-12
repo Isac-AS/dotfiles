@@ -1,11 +1,15 @@
-# theme = "tokyonight"
+theme = "tokyonight_storm"
 # theme = "dark_plus"
-theme = "modus_vivendi_tinted"
+# theme = "modus_vivendi_tinted"
 # theme = "onedark"
 # theme = "solarized_dark"
 
 [editor]
 line-number = "relative"
+cursorline = true
 
 [editor.lsp]
 display-inlay-hints = true
+
+[keys.normal.space]
+C-f="file_picker_in_current_buffer_directory"
