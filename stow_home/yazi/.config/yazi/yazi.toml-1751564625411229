@@ -1,0 +1,8 @@
+[manager]
+show_hidden = true
+
+[opener]
+edit = [
+  { run = 'helix "$@"', block = true, for = "unix" }
+]
+

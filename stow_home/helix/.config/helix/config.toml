@@ -3,6 +3,7 @@ theme = "tokyonight_storm"
 # theme = "modus_vivendi_tinted"
 # theme = "onedark"
 # theme = "solarized_dark"
+# theme = "term16_dark"
 
 [editor]
 line-number = "relative"
