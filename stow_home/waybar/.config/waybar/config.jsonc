@@ -15,8 +15,8 @@
     "modules-right": [
         "tray",
         "pulseaudio",
-        "cpu",
         "memory",
+        "cpu",
         "temperature",
         "custom/power"
     ],
@@ -38,16 +38,16 @@
         "format": "{:%H:%M - %Y-%m-%d}",
         "tooltip": false
     },
+    "memory": {
+        "format": " {percentage}% - {used}|{avail}|{total}"
+    },
     "cpu": {
         "format": " {usage}%",
         "tooltip": false
     },
-    "memory": {
-        "format": " {}%"
-    },
 
     "temperature": {
-        // "thermal-zone": 2,
+        "thermal-zone": 3,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
@@ -80,7 +80,7 @@
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
-			"shutdown": "shutdown",
+			"shutdown": "shutdown now",
 			"reboot": "reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
