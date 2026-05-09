@@ -1,1 +1,148 @@
-.g {}
+/* ========================================
+   Modus Vivendi Tinted Color Scheme
+   ======================================== */
+
+$bg:		#1d2235;
+$bg-alt:        #c6daff;
+$border:        #61647a;     
+
+$fg:		#f0f0f0;
+$fg-dim:        #989898;
+$fg-alt:        #c6daff;
+
+$red:           #ff5f59;
+$green:         #44bc44;
+$yellow:        #d0bc00;
+$blue:		#2fafff;
+$magenta:       #feacd0;
+$mag-cooler:    #b6a0ff;
+$mag-intense:   #ff66ff;
+$cyan:		#00d3d0;
+$rust:		#db7b5f;
+
+/* ========================================
+   Modus Vivendi Tinted Inspired Theme
+   ======================================== */
+
+* {
+    all: unset;
+    font-family: "Commit Mono Nerd Font", "Iosevka", monospace;
+    font-size: 20px;
+}
+
+/* Main window background */
+.routine-box {
+    background: rgba($bg, 0.8);   /* #1c1c2e with transparency */
+    border: 3px solid $border;
+}
+
+/* Left panel (info) */
+.routine-info-box {
+    padding: 14px;
+    border-right: 3px solid $border;
+}
+
+.routine-btn {
+    transition: all 200ms ease;
+    font-size: 52px;
+}
+
+.routine-btn:hover {
+    background: rgba($red, 0.25);
+}
+
+.current-time {
+    font-size: 86px;
+}
+
+.calendar-item {
+    margin: 12px;
+    border: 3px solid $border;
+    font-size: 26px;
+}
+
+/* Task items */
+.routine-task-list {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.task-item {
+    margin-left: 50px;
+    margin-right: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+.task-item:nth-child(odd) {
+    background: rgba($mag-cooler, 0.2);
+    border-bottom: 3px solid $border;
+    border-top: 3px solid $border;
+}
+
+.selected {
+    background: rgba($green, 0.2);
+}
+
+.pointer {
+    min-width: 20px;
+}
+
+
+/* Color classes */
+.red {
+    color: $red;
+}
+.green {
+    color: $green;
+}
+.yellow {
+    color: $yellow;
+}
+.blue {
+    color: $blue;
+}
+.magenta {
+    color: $magenta;
+}
+.cyan {
+    color: $cyan;
+}
+.rust {
+    color: $rust;
+}
+
+.bb {
+    border-bottom: 3px solid $border;
+}
+
+.bt {
+    border-top: 3px solid $border;
+}
+
+.bl {
+    border-left: 3px solid $border;
+}
+
+.br {
+    border-right: 3px solid $border;
+}
+
+.with-border {
+    border: 3px solid $border;
+}
+
+.calendar {
+    color: $fg-dim;
+}
+
+.calendar.highlight {
+    color: $fg;
+    font-weight: bold;
+    background: rgba($mag-cooler, 0.2);
+}
+
+.calendar:selected {
+    background: rgba($blue, 0.5);
+}

@@ -1,48 +1,85 @@
 ;; ============
 ;; Variables
 ;; ============
+(defvar eww-command "~/repos/eww/eww/target/release/eww")
+
+(defpoll current-time
+	 :interval "30s"
+	 `date +%H:%M`)
 (defpoll routine-file-json
-         :interval "60m"
+         :interval "20h"
          "cat ~/.config/eww/routines.json")
-(defvar current-routine "{}")
-(defvar current-task "{}")
-(defpoll current-time :interval "30s" `date +%H:%M`)
+(defpoll current-routine
+	 :interval "24h"
+	 "~/.config/eww/scripts/init-routine.py")
+(defpoll current-task
+	 :interval "15m"
+	 "~/.config/eww/scripts/current-task.py")
 
 ;; ============
 ;; Widgets
 ;; ============
 (defwidget routine-box []
   (box :orientation "h"
-       :spacing "8px"
-       :space-evenly true
+       :class "routine-box"
        (routine-info-box)
        (routine-task-list)))
 
 ;; Routine info box widgets
 (defwidget routine-info-box []
            (box :orientation "v"
-                :spacing "12px"
-                (routine-switching-buttons)
-                (label :text "Current: ")
-                (label :text "${current-time}")
-                (calendar :show-details "true")))
+		:class "routine-info-box"
+		(box :orientation "h"
+		     :class "with-border"
+		     (box :orientation "v"
+			  (label :text "Current routine"
+				 :class "magenta bb")
+			  (label :text "Default for"
+				 :class "blue bb")
+			  (label :text "Switch routine"
+				 :class "red bb")
+			  (label :text "Current task"
+				 :class "green"))
+		     (box :orientation "v"
+			  (label :text "${current-routine.ROUTINE-NAME}"
+				 :class "magenta bb")
+			  (label :text "${current-routine.DEFAULT-DAYS}"
+				 :class "blue bb")
+			  (routine-switching-buttons)
+			  (label :text "${current-task.Task}"
+				 :class "green")))
+                (label :text "${current-time}" :class "current-time")
+                (calendar :show-details "true"
+			  :show-week-numbers "true"
+			  :class "calendar-item calendar")))
 
 (defwidget routine-switching-buttons []
            (box :orientation "horizontal"
-                :halign "center"
-                :spacing "6px"
+		:class "routine-switching-buttons bb"
                 (for entry in {routine-file-json}
-                     (button :onclick "eww update current-routine '${entry}'"
+                     (button :onclick "${eww-command} update current-routine='${entry}'"
+			     :class "routine-btn"
                              (label :text "${entry.EMOJI}")
                      ))))
 
 ;; Routine task list
 (defwidget routine-task-list []
            (box :orientation "v"
-                :class "task-list"
-                :spacing "4px"
-                (label :text "Under construction")))
-
+                :class "routine-task-list"
+		(for row in {current-routine.table}
+		     (box :orientation "h"
+			  :class "${row.Start == current-task.Start && row.Task == current-task.Task ? 'selected' : ''} task-item"
+			  (label 
+				 :halign "start"
+				 :class "pointer"
+				 :width 1
+				 :truncate "true"
+				 :unindent "true"
+				 :text "${row.Start == current-task.Start && row.Task == current-task.Task ? '▶' : ' '}")
+			  (label :text "${row.Start}"
+				 :halign "start")
+			  (label :text "${row.Task}"
+				 :halign "start")))))
 
 ;; ============
 ;; Main window
@@ -51,7 +88,7 @@
            :monitor 0
            :geometry (geometry :x "0%"
                                :y "20px"
-                               :width "90%"
+                               :width "80%"
                                :height "90%"
                                :anchor "top center")
            :stacking "bg"
