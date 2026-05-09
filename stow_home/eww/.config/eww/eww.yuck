@@ -1,0 +1,61 @@
+;; ============
+;; Variables
+;; ============
+(defpoll routine-file-json
+         :interval "60m"
+         "cat ~/.config/eww/routines.json")
+(defvar current-routine "{}")
+(defvar current-task "{}")
+(defpoll current-time :interval "30s" `date +%H:%M`)
+
+;; ============
+;; Widgets
+;; ============
+(defwidget routine-box []
+  (box :orientation "h"
+       :spacing "8px"
+       :space-evenly true
+       (routine-info-box)
+       (routine-task-list)))
+
+;; Routine info box widgets
+(defwidget routine-info-box []
+           (box :orientation "v"
+                :spacing "12px"
+                (routine-switching-buttons)
+                (label :text "Current: ")
+                (label :text "${current-time}")
+                (calendar :show-details "true")))
+
+(defwidget routine-switching-buttons []
+           (box :orientation "horizontal"
+                :halign "center"
+                :spacing "6px"
+                (for entry in {routine-file-json}
+                     (button :onclick "eww update current-routine '${entry}'"
+                             (label :text "${entry.EMOJI}")
+                     ))))
+
+;; Routine task list
+(defwidget routine-task-list []
+           (box :orientation "v"
+                :class "task-list"
+                :spacing "4px"
+                (label :text "Under construction")))
+
+
+;; ============
+;; Main window
+;; ============
+(defwindow routine
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "20px"
+                               :width "90%"
+                               :height "90%"
+                               :anchor "top center")
+           :stacking "bg"
+           ;; :reserve (struts :side "top")
+           :windowtype "dock"
+           :wm-ignore false
+           (routine-box))
