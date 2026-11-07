@@ -1,0 +1,29 @@
+[location]
+
+# latitude  = 28.0
+# longitude = -15.57
+
+latitude  = 27.76
+longitude = -15.59
+
+[nightlight]
+enabled = true
+force = false
+
+temperature_day = 5000
+temperature_night = 3800
+
+[widget.clock]
+format = "{:%H:%M} | {:%Y-%m-%d}"
+
+
+# [[panel.top.modules]]
+# type = "calendar"
+# #format = "%b %d, %H:%M"         # e.g., Nov 07, 20:13
+# first_day_of_week = "monday"    # Forces the inline calendar hover list to start on Monday
+
+# # --- Interactive Sidebar / Dropdown Widget Component ---
+# [widget.calendar]
+# enabled = true
+# first_day_of_week = "monday"
+# show_week_numbers = true

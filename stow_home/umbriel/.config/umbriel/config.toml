@@ -195,8 +195,8 @@ numlock_toggle = true
 
 # Focus can follow the pointer across tiled, floating, and pinned windows.
 #
-# [input.focus]
-# follows_mouse = true
+[input.focus]
+follows_mouse = true
 # hover_raises = false # Hover focuses only; clicks and keybinds raise.
 
 # Confine touch input to one display.
@@ -234,6 +234,17 @@ numlock_toggle = true
 "XF86AudioPrev" = { action = "spawn noctalia msg media previous", allow_when_locked = true }
 "XF86MonBrightnessUp" = { action = "spawn noctalia msg brightness-up", allow_when_locked = true }
 "XF86MonBrightnessDown" = { action = "spawn noctalia msg brightness-down", allow_when_locked = true }
+
+# Screenshots
+# Interactive region capture (dimmed overlay + click & drag)
+"Print" = "spawn noctalia msg screenshot-region"
+
+# Capture the entire focused screen immediately without a selector
+"Mod+Print" = "spawn noctalia msg screenshot-fullscreen"
+
+# Interactive full-screen picker (useful for your 4-monitor grid)
+"Ctrl+Print" = "spawn noctalia msg screenshot-fullscreen pick"
+
 
 # Focus and movement
 "Mod+Left" = "window-focus-left"
