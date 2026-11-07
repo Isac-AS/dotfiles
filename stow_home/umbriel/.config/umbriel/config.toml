@@ -215,6 +215,9 @@ numlock_toggle = true
 
 # Applications and session
 "Mod+E" = { action = "spawn kitty", repeat = false }
+"Mod+B" = { action = "spawn emacs", repeat = false }
+"Mod+Z" = { action = "spawn zen-browser", repeat = false }
+
 "Mod" = "spawn noctalia msg panel-toggle launcher"
 "Mod+Q" = { action = "window-close", repeat = false }
 "Mod+Escape" = "session-quit"
@@ -237,28 +240,30 @@ numlock_toggle = true
 "Mod+Down" = "window-focus-down"
 "Mod+Up" = "window-focus-up"
 "Mod+Right" = "window-focus-right"
-"Mod+J" = "window-focus-left"
-"Mod+K" = "window-focus-down"
-"Mod+I" = "window-focus-up"
-"Mod+L" = "window-focus-right"
+
+"Mod+J" = "window-focus-or-output-left"
+"Mod+K" = "window-focus-or-output-down"
+"Mod+I" = "window-focus-or-output-up"
+"Mod+L" = "window-focus-or-output-right"
+
+"Mod+Shift+J" = "window-move-or-output-left"
+"Mod+Shift+K" = "window-move-or-output-down"
+"Mod+Shift+I" = "window-move-or-output-up"
+"Mod+Shift+L" = "window-move-or-output-right"
+
+"Mod+X" = "workspace-switch 1 --output HDMI-A-1"
+"Mod+C" = "workspace-switch 1 --output DP-3"
+"Mod+V" = "workspace-switch 1 --output DP-1"
+
+"Mod+Shift+X" = "window-move-to-workspace 1 --output HDMI-A-1"
+"Mod+Shift+C" = "window-move-to-workspace 1 --output DP-3"
+"Mod+Shift+V" = "window-move-to-workspace 1 --output DP-1"
+
 "Mod+F1" = "window-focus-next"
 "Mod+Shift+Left" = "column-move-left"
 "Mod+Shift+Down" = "window-move-down"
 "Mod+Shift+Up" = "window-move-up"
 "Mod+Shift+Right" = "column-move-right"
-
-# Focus specific monitors directly
-"Mod+Z" = "focus-output HDMI-A-1"
-"Mod+X" = "focus-output DP-3"
-"Mod+C" = "focus-output DP-1"
-"Mod+V" = "focus-output DP-2"
-
-# Move active window to specific monitors
-"Mod+Shift+Z" = "window-move-to-output HDMI-A-1"
-"Mod+Shift+X" = "window-move-to-output DP-3"
-"Mod+Shift+C" = "window-move-to-output DP-1"
-"Mod+Shift+V" = "window-move-to-output DP-2"
-
 
 # Window state and layout
 "Mod+T" = { action = "window-toggle-floating", repeat = false }
@@ -266,7 +271,7 @@ numlock_toggle = true
 "Mod+P" = { action = "window-toggle-pinned", repeat = false }
 "Mod+M" = { action = "window-toggle-maximize-to-edges", repeat = false }
 "Mod+F" = { action = "window-toggle-fullscreen", repeat = false }
-"Mod+Ctrl+F" = { action = "window-toggle-maximize", repeat = false }
+"Mod+Shift+F" = { action = "window-toggle-maximize", repeat = false }
 "Mod+R" = "window-cycle-primary-extent"
 "Mod+Shift+R" = "window-cycle-primary-extent-back"
 "Mod+Minus" = "window-modify-primary-extent -0.02"
@@ -299,9 +304,9 @@ numlock_toggle = true
 "Mod+Shift+S" = "window-move-to-workspace 2"
 "Mod+Shift+D" = "window-move-to-workspace 3"
 
-"Mod+1" = "workspace-switch 1"
-"Mod+2" = "workspace-switch 2"
-"Mod+3" = "workspace-switch 3"
+#"Mod+1" = "workspace-switch 1"
+#"Mod+2" = "workspace-switch 2"
+#"Mod+3" = "workspace-switch 3"
 "Mod+4" = "workspace-switch 4"
 "Mod+5" = "workspace-switch 5"
 "Mod+6" = "workspace-switch 6"
