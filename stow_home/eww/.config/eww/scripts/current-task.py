@@ -47,6 +47,10 @@ def get_current_task(routine_json_str, current_time_str):
                 print(json.dumps(row))
                 return
 
+            if start.hour > 21 and now.hour > 21:
+                print(json.dumps(row))
+                return
+
             diff = abs(now_minutes - normalized_start)
             if diff < best_diff:
                 best_diff = diff

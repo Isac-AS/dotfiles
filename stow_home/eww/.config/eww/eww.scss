@@ -81,6 +81,9 @@ $rust:		#db7b5f;
     border-top: 3px solid $border;
 }
 
+.task-item.selected {
+    background: rgba($green, 0.2);
+}
 .selected {
     background: rgba($green, 0.2);
 }
