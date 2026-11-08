@@ -1,29 +1,443 @@
-[location]
+[accessibility]
+ui_scale = 1.2500000111758709
 
-# latitude  = 28.0
-# longitude = -15.57
+[bar.default]
+end = [
+    "tray",
+    "clipboard",
+    "notifications",
+    "notes",
+    "spacer_2",
+    "group:g2",
+    "group:g3",
+    "group:g1",
+    "control-center",
+    "spacer_3",
+    "session"
+]
 
-latitude  = 27.76
-longitude = -15.59
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    id = "g1"
+    members = [ "network", "network_rx" ]
+    opacity = 1.0
+    padding = 6.0
 
-[nightlight]
-enabled = true
-force = false
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    id = "g2"
+    members = [ "media", "volume" ]
+    opacity = 1.0
+    padding = 6.0
 
-temperature_day = 5000
-temperature_night = 3800
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border = "tertiary_container"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    id = "g3"
+    members = [ "cpu", "ram", "temp" ]
+    opacity = 1.0
+    padding = 6.0
 
-[widget.clock]
-format = "{:%H:%M} | {:%Y-%m-%d}"
+[calendar]
 
+[control_center.calendar]
+show_week_numbers = true
 
-# [[panel.top.modules]]
-# type = "calendar"
-# #format = "%b %d, %H:%M"         # e.g., Nov 07, 20:13
-# first_day_of_week = "monday"    # Forces the inline calendar hover list to start on Monday
+[desktop_widgets]
+schema_version = 2
+widget_order = [
+    "desktop-widget-0000000000000001",
+    "desktop-widget-0000000000000002",
+    "desktop-widget-0000000000000003",
+    "desktop-widget-0000000000000004",
+    "desktop-widget-0000000000000005",
+    "desktop-widget-0000000000000006",
+    "desktop-widget-0000000000000007",
+    "desktop-widget-0000000000000008",
+    "desktop-widget-000000000000000a",
+    "desktop-widget-000000000000000b",
+    "desktop-widget-000000000000000c",
+    "desktop-widget-000000000000000d"
+]
 
-# # --- Interactive Sidebar / Dropdown Widget Component ---
-# [widget.calendar]
-# enabled = true
-# first_day_of_week = "monday"
-# show_week_numbers = true
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 256.0
+    box_width = 384.0
+    cx = 896.0
+    cy = 336.0
+    output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        clock_style = "digital"
+        format = "{:%H:%M}\\n{:%Y-%m-%d}"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000002]
+    box_height = 512.0
+    box_width = 832.0
+    cx = 1568.0
+    cy = 400.0
+    output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "calendar"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
+        background = true
+        font_family = "CommitMono Nerd Font"
+        show_events_location = false
+        show_week_numbers = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000003]
+    box_height = 192.0
+    box_width = 320.0
+    cx = 544.0
+    cy = 752.0
+    output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
+        stat = "cpu_usage"
+        stat2 = "cpu_temp"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000004]
+    box_height = 496.0
+    box_width = 384.0
+    cx = 2240.0
+    cy = 400.0
+    output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "weather"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000004.settings]
+        forecast_days = 5
+        show_forecast = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000005]
+    box_height = 160.0
+    box_width = 320.0
+    cx = 1568.0
+    cy = 928.0
+    output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "volume"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000005.settings]
+        device = "output"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000006]
+    box_height = 160.0
+    box_width = 320.0
+    cx = 1568.0
+    cy = 1120.0
+    output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "volume"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000006.settings]
+        device = "input"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000007]
+    box_height = 192.0
+    box_width = 320.0
+    cx = 544.0
+    cy = 1264.0
+    output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000007.settings]
+        display = "graph"
+        gauge_layout = "horizontal"
+        stat = "ram_pct"
+        stat2 = "swap_pct"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000008]
+    box_height = 192.0
+    box_width = 320.0
+    cx = 544.0
+    cy = 1008.0
+    output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000008.settings]
+        stat = "gpu_usage"
+        stat2 = "gpu_temp"
+
+    [desktop_widgets.widget.desktop-widget-000000000000000a]
+    box_height = 96.0
+    box_width = 192.0
+    cx = 224.0
+    cy = 1008.0
+    output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = -0.0
+    type = "label"
+
+        [desktop_widgets.widget.desktop-widget-000000000000000a.settings]
+        opacity = 1.0
+        title = "GPU"
+
+    [desktop_widgets.widget.desktop-widget-000000000000000b]
+    box_height = 96.0
+    box_width = 192.0
+    cx = 224.0
+    cy = 752.0
+    output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = -0.0
+    type = "label"
+
+        [desktop_widgets.widget.desktop-widget-000000000000000b.settings]
+        opacity = 1.0
+        title = "CPU"
+
+    [desktop_widgets.widget.desktop-widget-000000000000000c]
+    box_height = 96.0
+    box_width = 192.0
+    cx = 224.0
+    cy = 1264.0
+    output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = -0.0
+    type = "label"
+
+        [desktop_widgets.widget.desktop-widget-000000000000000c.settings]
+        opacity = 1.0
+        title = "MEM"
+
+    [desktop_widgets.widget.desktop-widget-000000000000000d]
+    box_height = 192.0
+    box_width = 320.0
+    cx = 928.0
+    cy = 1008.0
+    output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-000000000000000d.settings]
+        stat = "gpu_vram"
+        stat2 = "gpu_vram_used"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@HDMI-A-1",
+    "lockscreen-login-box@DP-1",
+    "lockscreen-login-box@DP-2",
+    "lockscreen-login-box@DP-3"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0
+    output = "DP-2"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-3"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0
+    output = "DP-3"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-3".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0
+    output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[plugins]
+enabled = [ "noctalia/notes" ]
+
+[shell]
+font_family = "CommitMono Nerd Font"
+
+[theme]
+builtin = "Catppuccin"
+community_palette = "Catppuccin Mocha Green"
+mode = "dark"
+source = "builtin"
+wallpaper_scheme = "soft"
+
+[wallpaper.default]
+path = "/home/isac/Pictures/Backgrounds/84.jpg"
+
+[wallpaper.last]
+path = "/home/isac/Pictures/Backgrounds/84.jpg"
+
+[wallpaper.monitors.DP-1]
+path = "/home/isac/Pictures/Backgrounds/84.jpg"
+
+[wallpaper.monitors.DP-2]
+path = "/home/isac/Pictures/Backgrounds/84.jpg"
+
+[wallpaper.monitors.DP-3]
+path = "/home/isac/Pictures/Backgrounds/84.jpg"
+
+[wallpaper.monitors.HDMI-A-1]
+path = "/home/isac/Pictures/Backgrounds/84.jpg"
+
+[[wallpaper.favorite]]
+path = "/home/isac/Pictures/Backgrounds/85.jpg"
+
+[[wallpaper.favorite]]
+builtin_palette = "Catppuccin"
+palette_source = "builtin"
+path = "/home/isac/Pictures/Backgrounds/84.jpg"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+path = "/home/isac/Pictures/Backgrounds/60.jpeg"
+
+[[wallpaper.favorite]]
+path = "/home/isac/Pictures/Backgrounds/59.jpg"
+
+[widget.notes]
+type = "noctalia/notes:notes"
+
+[widget.spacer_2]
+type = "spacer"
+
+[widget.spacer_3]
+type = "spacer"
+

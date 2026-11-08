@@ -218,10 +218,15 @@ follows_mouse = true
 "Mod+B" = { action = "spawn emacs", repeat = false }
 "Mod+Z" = { action = "spawn zen-browser", repeat = false }
 
-"Mod" = "spawn noctalia msg panel-toggle launcher"
+"Mod+G" = "spawn noctalia msg panel-toggle launcher"
 "Mod+Q" = { action = "window-close", repeat = false }
 "Mod+Escape" = "session-quit"
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
+
+# Widgets
+"Mod+1" = "spawn noctalia msg panel-toggle clipboard"
+#"Mod+2" = "spawn noctalia msg panel-toggle noctalia/notes:Notes"
+"Mod+3" = "spawn noctalia msg panel-toggle session"
 
 # Media, volume and brightness keys from any input device, routed through the
 # Noctalia shell so its OSDs show. Safe while the session is locked.

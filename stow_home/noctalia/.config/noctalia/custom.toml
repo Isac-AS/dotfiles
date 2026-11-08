@@ -1,0 +1,16 @@
+# Hand written config that survives config exports
+[location]
+# latitude  = 28.0
+# longitude = -15.57
+latitude  = 27.76
+longitude = -15.59
+
+[nightlight]
+enabled = true
+force = false
+
+temperature_day = 4500
+temperature_night = 3800
+
+[widget.clock]
+format = "{:%H:%M} | {:%Y-%m-%d}"
